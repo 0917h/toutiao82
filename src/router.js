@@ -1,22 +1,23 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-// import Home from './views/home'
-import Login from './views/Login/login'
+import Home from './views/home'
+import Login from './views/login'
+
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    // {
-    // path: '/',
-    // name: 'home',
-    // component: Home
-    // },
-    {
-      path: '/',
-      name: 'login',
-      component: Login
-    }
-    // {
+  routes: [ {
+    path: '/login',
+    component: Login
+  }, {
+    path: '/',
+    redirect: '/home'
+  }, {
+    path: '/home',
+    name: 'home',
+    component: Home
+  }
+    // {y
     //   path: '/about',
     //   name: 'about',
     //   // route level code-splitting
