@@ -7,12 +7,12 @@
       background-color="#323745"
       text-color="#adafb5"
       active-text-color="#ffd04b">
-      <el-menu-item index="2">
+      <el-menu-item index="/">
         <i class="el-icon-s-home"></i>
         <span slot="title">首页</span>
       </el-menu-item>
       <!-- el-submenu是有折叠的菜单 -->
-      <el-submenu>
+      <el-submenu index="1">
           <!-- el-submenu 定义一个具名插槽 title-->
           <template slot="title">
               <i class="el-icon-s-order"></i>
@@ -24,16 +24,16 @@
         <el-menu-item>素材管理</el-menu-item>
 
       </el-submenu>
-      <el-submenu>
+      <el-submenu index="2">
           <!-- el-submenu 定义一个具名插槽 title-->
           <template slot="title">
               <i class="el-icon-s-custom"></i>
               <span>粉丝管理</span>
           </template>
-        <el-menu-item>图文画像</el-menu-item>
-        <el-menu-item>粉丝概况</el-menu-item>
-        <el-menu-item>粉丝列表</el-menu-item>
-        <el-menu-item>粉丝画像</el-menu-item>
+        <el-menu-item index="4">图文画像</el-menu-item>
+        <el-menu-item index="5">粉丝概况</el-menu-item>
+        <el-menu-item index="6">粉丝列表</el-menu-item>
+        <el-menu-item index="7">粉丝画像</el-menu-item>
 
       </el-submenu>
       <el-menu-item index="3" >
