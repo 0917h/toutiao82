@@ -9,16 +9,16 @@
       <el-col class="right" :span="3">
         <!-- 属性不给 ： 相当于字符串 -->
           <img class="head-img" :src="userInfo.photo ? userInfo.photo : defaultImg"  alt="">
-          <el-dropdown trigger="click" >
+          <el-dropdown trigger="click" @command="handleMenuItem">
         <!-- 匿名插槽 -->
       <span class="el-dropdown-link">
         {{userInfo.name}}<i class="el-icon-arrow-down el-icon--right"></i>
       </span>
       <!-- 具名插槽 -->
       <el-dropdown-menu slot="dropdown">
-        <el-dropdown-item >个人信息</el-dropdown-item>
-        <el-dropdown-item >git地址</el-dropdown-item>
-        <el-dropdown-item >退出</el-dropdown-item>
+        <el-dropdown-item command='account'>个人信息</el-dropdown-item>
+        <el-dropdown-item command='git'>git地址</el-dropdown-item>
+        <el-dropdown-item command='lgout '>退出</el-dropdown-item>
       </el-dropdown-menu>
     </el-dropdown>
       </el-col>
@@ -34,6 +34,7 @@ export default {
     }
   },
   methods: {
+    // 获取用户数据
     getUserInfo () {
       let token = window.localStorage.getItem('user-token')
       this.$axios({
@@ -42,6 +43,18 @@ export default {
       }).then(result => {
         this.userInfo = result.data.data
       })
+    },
+    // 点击菜单触发的方法
+    handleMenuItem (command) {
+      if (command === 'account') {
+        // 账户信息
+      } else if (command === 'git') {
+        // git地址
+        window.location.href = 'http://github.com/shuiruohanyu/82heimatoutiao'
+      } else {
+        window.localStorage.clear() // 清空缓存 清除所有缓存 只能清除自己当前项目的缓存
+        this.$router.push('/login') // 跳转到登录页
+      }
     }
   },
   created () {
