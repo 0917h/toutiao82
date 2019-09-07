@@ -45,15 +45,15 @@ export default {
       })
     },
     // 点击菜单触发的方法
-    handleMenuItem (command) {
+    ahandleMenuItem (command) {
       if (command === 'account') {
         // 账户信息
       } else if (command === 'git') {
         // git地址
         window.location.href = 'http://github.com/shuiruohanyu/82heimatoutiao'
       } else {
-        window.localStorage.clear() // 清空缓存 清除所有缓存 只能清除自己当前项目的缓存
-        this.$router.push('/login') // 跳转到登录页
+        window.localStorage.clear()
+        this.$router.push('/login')
       }
     }
   },
