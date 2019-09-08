@@ -94,7 +94,7 @@ export default {
               // 放到前端的缓存中
               window.localStorage.setItem('user-token', result.data.data.token)
               // 编程式导航
-              this.$router.push('/')
+              this.$router.push('/home')
             })
             .catch(() => {
               this.$message({
