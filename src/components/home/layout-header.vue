@@ -39,11 +39,11 @@ export default {
       this.$axios({
         url: '/user/profile'
       }).then(result => {
-        this.userInfo = result.data.data
+        this.userInfo = result.data
       })
     },
     // 点击菜单触发的方法
-    ahandleMenuItem (command) {
+    handleMenuItem (command) {
       if (command === 'account') {
         // 账户信息
       } else if (command === 'git') {

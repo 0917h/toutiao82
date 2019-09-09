@@ -8,9 +8,15 @@ axios.interceptors.request.use(function (config) {
   let token = window.localStorage.getItem('user-token')
   config.headers['Authorization'] = `Bearer ${token}` // 统一注册token
   return config
+}, function () { })
+// 响应拦截器
+axios.interceptors.response.use(function (response) {
+  return response.data ? response.data : {}
 }, function () {})
-export default {
-  install: function (Vue) {
-    Vue.prototype.$axios = axios // 给Vue对象的原型属性赋值 那么所有Vue实例自动拥有axios
-  }
-}
+
+// export default {
+//   install: function (Vue) {
+//     Vue.prototype.$axios = axios // 给Vue对象的原型属性赋值 那么所有Vue实例自动拥有axios
+//   }
+// }
+export default axios

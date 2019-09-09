@@ -92,7 +92,7 @@ export default {
           })
             .then(result => {
               // 放到前端的缓存中
-              window.localStorage.setItem('user-token', result.data.data.token)
+              window.localStorage.setItem('user-token', result.data.token)
               // 编程式导航
               this.$router.push('/home')
             })
